@@ -39,7 +39,7 @@ export const SkillGapAnalyzerModal = ({ showModal, setShowModal }) => {
 								<span>John Doe</span>
 							</div>
 							<div className="info-container w-max h-fit m-4 p-4 flex flex-col justify-center items-center">
-								<Link to="/skill-analyzer" className="link text-white bg-[#185440] p-2 rounded-md shadow-md">
+								<Link to="/skill-analyze" className="link text-white bg-[#185440] p-2 rounded-md shadow-md">
 									ARE YOU GAPPED? Start Skill Analysis
 								</Link>
 							</div> 

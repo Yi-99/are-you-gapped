@@ -4,7 +4,7 @@ import './App.css'
 import { UserContext } from './UserContext.jsx';
 import { v4 as uuidv4 } from 'uuid';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import SkillAnalyzerPage from './SkillAnalyzerPage.jsx'
+import SkillAnalyzerPage from './SkillAnalyzePage.jsx'
 import HomePage from './HomePage.jsx'
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
 			<Router>
 					<Routes>
 						<Route path="/" element={<HomePage/>}/>
-						<Route path="/skill-analyzer" element={<SkillAnalyzerPage/>}/>
+						<Route path="/skill-analyze" element={<SkillAnalyzerPage/>}/>
 					</Routes>
 			</Router>
 		</UserContext.Provider>
