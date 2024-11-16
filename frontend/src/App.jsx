@@ -15,10 +15,10 @@ function App() {
 	}
 
   return (
-		// <div style={backgroundStyle}>
+		<div style={backgroundStyle}>
 			
-		// </div>
-    <GapAnalyzer/>
+		</div>
+    // <GapAnalyzer/>
   )
 }
 
