@@ -8,5 +8,6 @@ import Pentagon from './component/Pentagon.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
+    <Pentagon />
   </React.StrictMode>,
 )
