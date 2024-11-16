@@ -16,7 +16,6 @@ const Pentagon = () => {
         <RadarChart cx={300} cy={250} outerRadius={150} width={600} height={500} data={data}>
             <PolarGrid />
             <PolarAngleAxis dataKey="subject" />
-            <PolarRadiusAxis />
             <Radar name="Skill Graph" dataKey="A" stroke='#000' fill='#2c6353' fillOpacity={0.6} />
 
             <Tooltip
