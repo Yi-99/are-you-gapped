@@ -39,7 +39,7 @@ export const SkillGapAnalyzerModal = ({ showModal, setShowModal }) => {
 							</div> 
 						</div>
 						) : (
-							<Pentagon outerRadius={50} width={300} height={300}/>
+							<Pentagon className='justify-center' outerRadius={50} width={300} height={300}/>
 						)
 				}
 				
