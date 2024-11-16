@@ -28,19 +28,19 @@ function App() {
 	}, [showModal])
 
   return (
-		<div style={backgroundStyle}>
-			{ showModal ? (
-				<div className="modal-container bottom-4 right-4 absolute">
-						<SkillGapAnalyzerModal showModal={showModal} setShowModal={setShowModal}/>
-					</div>
-				) : (
-					<div className="modal-button w-12 h-12 bg-[#185440] rounded-full absolute bottom-4 right-4 flex justify-center items-center cursor-pointer" onClick={handleModalClick}>
-						<PersonIcon className="text-white" />
-					</div>
-				)
-			}
-		</div>
-    // <GapAnalyzer/>
+		// <div style={backgroundStyle}>
+		// 	{ showModal ? (
+		// 		<div className="modal-container bottom-4 right-4 absolute">
+		// 				<SkillGapAnalyzerModal showModal={showModal} setShowModal={setShowModal}/>
+		// 			</div>
+		// 		) : (
+		// 			<div className="modal-button w-12 h-12 bg-[#185440] rounded-full absolute bottom-4 right-4 flex justify-center items-center cursor-pointer" onClick={handleModalClick}>
+		// 				<PersonIcon className="text-white" />
+		// 			</div>
+		// 		)
+		// 	}
+		// </div>
+    <GapAnalyzer/>
   )
 }
 
