@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from 'recharts';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Tooltip } from 'recharts';
 
 const data = [
     { subject: 'React', A: 100, fullMark: 150 },
@@ -16,6 +16,12 @@ const Pentagon = () => {
             <PolarAngleAxis dataKey="subject" />
             <PolarRadiusAxis />
             <Radar name="Skill Graph" dataKey="A" stroke='#000' fill='#2c6353' fillOpacity={0.6} />
+
+            <Tooltip
+                contentStyle={{ backgroundColor: '#f5f5f5', borderRadius: '8px' }}
+                itemStyle={{ color: '#2c6353' }}
+                formatter={(value) => [`Score: ${value}`, '']}
+            />
         </RadarChart>
     );
 };
