@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import lelandImage from './assets/leland.png'
+import GapAnalyzer from './page/GapAnalyzer'
 
 function App() {
 	const backgroundStyle = {
@@ -14,9 +15,10 @@ function App() {
 	}
 
   return (
-		<div style={backgroundStyle}>
+		// <div style={backgroundStyle}>
 			
-		</div>
+		// </div>
+    <GapAnalyzer/>
   )
 }
 
