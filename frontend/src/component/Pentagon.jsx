@@ -1,6 +1,8 @@
 import React from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Tooltip } from 'recharts';
 
+
+
 const data = [
     { subject: 'React', A: 100, fullMark: 150 },
     { subject: 'Nodejs', A: 78, fullMark: 150 },
