@@ -32,6 +32,7 @@ const SkillAnalyzePage = () => {
 				<p className="text-[#185440] text-4xl mt-16 font-extrabold">We have a study plan for you!</p>
 				<p className="text-[#185440] text-start flex-wrap">This is a plan. you will meet with the advisor to further discuss the topics.</p>
 				<div className="green-br"></div>
+				
 			</div>
 		</div>
 	)
