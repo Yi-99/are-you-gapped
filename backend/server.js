@@ -6,7 +6,6 @@ const DB = require('./database.js');
 const cors = require('cors');
 const axios = require("axios");
 const path = require("path");
-const apiKey = require('./apiKey.json'); // 여기에 API 인증 키를 넣어주세요
 const { peerProxy } = require('./peerProxy.js');
 const app = express();
 
