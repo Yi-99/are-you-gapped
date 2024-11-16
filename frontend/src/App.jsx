@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import lelandImage from './assets/leland.png'
+import CareerProgress from './component/careerProgress'
 
 function App() {
 	const backgroundStyle = {
