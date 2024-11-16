@@ -1,8 +1,6 @@
 import React from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Tooltip } from 'recharts';
 
-
-
 const data = [
     { subject: 'React', A: 100, fullMark: 150 },
     { subject: 'Nodejs', A: 78, fullMark: 150 },
@@ -11,18 +9,19 @@ const data = [
     { subject: 'sss', A: 99, fullMark: 150 },
 ];
 
-
-const Pentagon = () => {
+const Pentagon = ({ cx, cy, outerRadius, width, height }) => {
     return (
-        <RadarChart cx={300} cy={250} outerRadius={150} width={600} height={500} data={data}>
+        <RadarChart cx={cx ?? 50} cy={cy ?? 50} outerRadius={outerRadius} width={width} height={height} data={data}>
             <PolarGrid />
             <PolarAngleAxis dataKey="subject" />
-            <Radar name="Skill Graph" dataKey="A" stroke='#000' fill='#2c6353' fillOpacity={0.6} />
+            <PolarRadiusAxis />
+            <Radar name="Skill Graph" dataKey="A" stroke='#000' fill='#9BD8BB' fillOpacity={0.6} />
 
             <Tooltip
                 contentStyle={{ backgroundColor: '#f5f5f5', borderRadius: '8px' }}
                 itemStyle={{ color: '#2c6353' }}
                 formatter={(value) => [`Score: ${value}`, '']}
+                coordinate={{ x: 100, y: 100 }}
             />
         </RadarChart>
     );
