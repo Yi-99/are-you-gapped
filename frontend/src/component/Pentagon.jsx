@@ -2,11 +2,11 @@ import React from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Tooltip } from 'recharts';
 
 const data = [
-    { subject: 'React', A: 100, fullMark: 150 },
-    { subject: 'Nodejs', A: 78, fullMark: 150 },
-    { subject: 'Communication', A: 69, fullMark: 150 },
-    { subject: 'slsls', A: 66, fullMark: 150 },
-    { subject: 'sss', A: 99, fullMark: 150 },
+    { subject: 'Lang&Frameworks', A: 100, fullMark: 150 },
+    { subject: 'Algorithms', A: 78, fullMark: 150 },
+    { subject: 'Leadership', A: 69, fullMark: 150 },
+    { subject: 'Cloud', A: 66, fullMark: 150 },
+    { subject: 'System Design', A: 99, fullMark: 150 },
 ];
 
 const Pentagon = ({ cx, cy, outerRadius, width, height }) => {
