@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
-import './App.css'
 import lelandImage from './assets/leland.png'
 import GapAnalyzer from './page/GapAnalyzer'
 import CareerProgress from './component/careerProgress'
 import { SkillGapAnalyzerModal } from './component/SkillGapAnalyzerModal'
 import PersonIcon from '@mui/icons-material/Person';
+import CodingTestPage from './page/CodingTestPage'
 
 function App() {
 	const backgroundStyle = {
@@ -40,7 +40,8 @@ function App() {
 		// 		)
 		// 	}
 		// </div>
-    <GapAnalyzer/>
+    // <GapAnalyzer/>
+    <CodingTestPage/>
   )
 }
 
