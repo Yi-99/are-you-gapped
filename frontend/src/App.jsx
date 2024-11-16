@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
-import './App.css'
 
 import { UserContext } from './UserContext.jsx';
 import { v4 as uuidv4 } from 'uuid';
+import GapAnalyzer from './page/GapAnalyzer'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SkillAnalyzerPage from './SkillAnalyzePage.jsx'
 import HomePage from './HomePage.jsx'
+import CodingTestPage from './page/CodingTestPage'
 
 function App() {
 	const [user, setUser] = useState({
@@ -19,6 +20,7 @@ function App() {
 					<Routes>
 						<Route path="/" element={<HomePage/>}/>
 						<Route path="/skill-analyze" element={<SkillAnalyzerPage/>}/>
+						<Route path="/skill-test" element={<CodingTestPage/>}/>
 					</Routes>
 			</Router>
 		</UserContext.Provider>
