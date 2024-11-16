@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import lelandImage from './assets/leland.png'
+import GapAnalyzer from './page/GapAnalyzer'
 import CareerProgress from './component/careerProgress'
 import { SkillGapAnalyzerModal } from './component/SkillGapAnalyzerModal'
 import PersonIcon from '@mui/icons-material/Person';
@@ -39,6 +40,7 @@ function App() {
 				)
 			}
 		</div>
+    // <GapAnalyzer/>
   )
 }
 
