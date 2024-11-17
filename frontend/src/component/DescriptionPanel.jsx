@@ -2,7 +2,7 @@ const DescriptionPanel = ({ currentQuestion }) => {
     return (
       <div className="bg-white rounded flex-1">
         {/* Header */}
-          <h2 className="text-lg font-semibold my-4">Description</h2>
+          <h2 className="text-lg font-semibold my-4 ml-4">Description</h2>
         {/* Question Content */}
         <div className="p-4">
           <p className="text-base text-gray-700 mb-4">{currentQuestion.question}</p>
