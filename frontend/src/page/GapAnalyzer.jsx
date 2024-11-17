@@ -54,7 +54,7 @@ const GapAnalyzer = () => {
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='text-center mt-20'>
           <h2 className='text-3xl font-extrabold sm:text-4xl'>
-            Meet Our Coaches
+            Personalized Coach Recommendations
           </h2>
           <p className='mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4'>
             We have a passionate team dedicated to delivering the best.
