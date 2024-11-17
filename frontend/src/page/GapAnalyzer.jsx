@@ -4,25 +4,30 @@ import CareerProgress from "../component/careerProgress"
 const GapAnalyzer = () => {
     const teamMembers = [
         {
-          name: 'Michelle B.',
-          role: 'Unlock Your Engineering Career | Senior Software Engineer 15+ | FAANG',
-          image: 'https://leland.imgix.net/profile-photos/66fee16a0bf02f035056825c.jpeg?fit=crop&crop=faces&h=400&w=400',
-        },
-        {
-          name: 'Camellia Y.',
-          role: 'Boost Your Engineering Career with senior engineer and co-founder',
-          image: 'https://leland.imgix.net/profile-photos/65693c2380ee8859f6fddb0f.jpg?fit=crop&crop=faces&h=400&w=400',
-        },
-        {
-          name: 'Jiashuo W.',
-          role: 'Level Up Your Path to Software Engineer | Land Your Next Big Move',
-          image: 'https://leland.imgix.net/profile-photos/63c8eaae80e789137f30d76e.jpeg?fit=crop&crop=faces&h=400&w=400',
-        },
-        {
-          name: 'Aaron.C',
-          role: 'Experienced Software Engineer and Technical Lead at Microsoft and Github',
-          image: 'https://leland.imgix.net/profile-photos/629bd32d2c58be62fcc98e74.jpg?fit=crop&crop=faces&h=400&w=400',
-        },
+            name: 'Michelle B.',
+            role: 'Unlock Your Engineering Career | Senior Software Engineer 15+ | FAANG',
+            image: 'https://leland.imgix.net/profile-photos/66fee16a0bf02f035056825c.jpeg?fit=crop&crop=faces&h=400&w=400',
+            tech: '',
+            techstack: 'JavaScript, React, Node.js' // 추가된 techstack
+          },
+          {
+            name: 'Camellia Y.',
+            role: 'Boost Your Engineering Career with senior engineer and co-founder',
+            image: 'https://leland.imgix.net/profile-photos/65693c2380ee8859f6fddb0f.jpg?fit=crop&crop=faces&h=400&w=400',
+            techstack: 'Python, Django, AWS' // 추가된 techstack
+          },
+          {
+            name: 'Jiashuo W.',
+            role: 'Level Up Your Path to Software Engineer | Land Your Next Big Move',
+            image: 'https://leland.imgix.net/profile-photos/63c8eaae80e789137f30d76e.jpeg?fit=crop&crop=faces&h=400&w=400',
+            techstack: 'Java, Spring Boot, Docker' // 추가된 techstack
+          },
+          {
+            name: 'Aaron.C',
+            role: 'Experienced Software Engineer and Technical Lead at Microsoft and Github',
+            image: 'https://leland.imgix.net/profile-photos/629bd32d2c58be62fcc98e74.jpg?fit=crop&crop=faces&h=400&w=400',
+            techstack: 'C#, .NET, Azure' // 추가된 techstack
+          }
         // {
         //   name: 'Suyeol Yoon',
         //   role: 'Product Manager & Fullstack Software Engineer',
@@ -70,6 +75,7 @@ const GapAnalyzer = () => {
               />
               <h3 className='text-xl font-bold text-center'>{member.name}</h3>
               <p className='text-sm text-center'>{member.role}</p>
+              <p className="text-sm text-center">{member.techstack}</p>
             </div>
           ))}
         </div>
