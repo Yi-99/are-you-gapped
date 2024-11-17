@@ -1,17 +1,22 @@
-const DescriptionPanel = () => {
-  return (
-    <div className="bg-white rounded shadow-md flex-1">
-        <div className="flex items-center bg-gray-200 rounded-t px-4">
-            <h2 className="text-lg font-semibold mb-4 pt-4">Description | Feedback</h2>
+const DescriptionPanel = ({ currentQuestion }) => {
+    return (
+      <div className="bg-white rounded flex-1">
+        {/* Header */}
+          <h2 className="text-lg font-semibold my-4">Description</h2>
+        {/* Question Content */}
+        <div className="p-4">
+          <p className="text-base text-gray-700 mb-4">{currentQuestion.question}</p>
+          {currentQuestion.options && (
+            <ul className="list-disc pl-6 text-base text-gray-700">
+              {currentQuestion.options.map((option, index) => (
+                <li key={index}>{option}</li>
+              ))}
+            </ul>
+          )}
         </div>
-      <p className="text-base text-gray-700 p-2">
-        Write a query that shows each customer ID labeled <strong>“CustomerID”</strong>, name, and total ordered amount labeled <strong>“TotalRevenue”</strong>.
-      </p>
-      <p className="mt-4 text-base text-gray-700 p-2">
-        NOTE: For exams, we will grade the output and expect the field names to look exactly like specified...
-      </p>
-    </div>
-  );
-};
-
-export default DescriptionPanel;
+      </div>
+    );
+  };
+  
+  export default DescriptionPanel;
+  
