@@ -1,0 +1,10 @@
+.nav-container {
+	width: 100%;
+}
+
+.green-br {
+	border: none;
+	height: 1px;
+	background-color: #185440;
+	margin: 2rem 0 2rem 0;
+}
