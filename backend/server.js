@@ -33,7 +33,7 @@ app.use(function (err, req, res, next) {
     res.status(500).send({ type: err.name, message: err.message });
   });
 
-app.get('/soccer-results', async (req, res) => {
+app.get('/get', async (req, res) => {
     try {
         const response = await axios.get('https://api.football-data.org/v4/competitions/PL/matches', {
             headers: {
@@ -46,8 +46,6 @@ app.get('/soccer-results', async (req, res) => {
         res.status(500).json({ error: 'Failed to fetch soccer results' });
     }
 });
-
-//http://api.football-data.org/v4/competitions/PL/standings 프리미어리그 순서 가져오는 api endpoint
 
 apiRouter.post('/auth/create', async (req, res) => {
     if (await DB.getUser(req.body.email)) {

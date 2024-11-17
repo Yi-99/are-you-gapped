@@ -9,8 +9,5 @@ import ChartDescription from './component/ChartDescription.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
-    <Pentagon />
-    <OverallScore />
-    <ChartDescription />
   </React.StrictMode>,
 )

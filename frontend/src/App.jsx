@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SkillAnalyzerPage from './SkillAnalyzePage.jsx'
 import HomePage from './HomePage.jsx'
 import CodingTestPage from './page/CodingTestPage'
+import TimeLine from './component/TimeLine'
 
 function App() {
 	const [user, setUser] = useState({
@@ -21,6 +22,7 @@ function App() {
 						<Route path="/" element={<HomePage/>}/>
 						<Route path="/skill-analyze" element={<SkillAnalyzerPage/>}/>
 						<Route path="/skill-test" element={<CodingTestPage/>}/>
+						<Route path="/time-line" element={<TimeLine/>}/>
 					</Routes>
 			</Router>
 		</UserContext.Provider>
