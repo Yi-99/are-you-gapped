@@ -1,8 +1,6 @@
 const QuestionPanel = ({ questionData, questionIndex, totalQuestions, selectedOption, setSelectedOption }) => {
     return (
       <div className="bg-white rounded shadow-md p-6">
-        <h2 className="text-xl font-bold mb-4">Multiple Choice Question</h2>
-        <p className="text-gray-700 text-base mb-6">{`Question ${questionIndex} of ${totalQuestions}`}</p>
         <p className="text-lg text-gray-800 mb-4">{questionData.question}</p>
         <div className="space-y-2">
           {questionData.options.map((option, index) => (

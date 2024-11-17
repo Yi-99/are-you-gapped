@@ -20,13 +20,19 @@ const CodingTestPage = () => {
 
   const navigate = useNavigate();
   
-  // Validate user input and set error message dynamically
-  const handleQuerySubmit = () => {
-    if (!queryInput.trim()) {
-      setError("Error: code cannot be empty.");
-    } else {
-      setError(`error: use of undeclared identifier '${queryInput}' 1 error generated.`)
-    }
+  const handleNext = () => {
+    // Reset states on next button click
+    setSelectedOption(null); // Clear selected option
+    setQueryInput(""); // Clear query input (if needed for coding questions)
+    setError(""); // Clear error message
+    setCurrentIndex((prev) => Math.min(prev + 1, totalQuestions - 1));
+  };
+
+  const handleBack = () => {
+    setSelectedOption(null); // Clear selected option
+    setQueryInput(""); // Clear query input (if needed)
+    setError(""); // Clear error message
+    setCurrentIndex((prev) => Math.max(prev - 1, 0));
   };
 	
 	const handleFinish = () => {
@@ -110,12 +116,14 @@ const CodingTestPage = () => {
           {error}
         </div>
       )}
-      <button
-        onClick={handleFinish}
-        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-      >
-        Finish
-      </button>
+      <div className="flex justify-center items-center">
+        <button
+          onClick={handleFinish}
+          className="bg-[#185440] text-white px-4 py-2 rounded"
+        >
+          Finish
+        </button>
+      </div>
     </div>
   </div>
 )}
