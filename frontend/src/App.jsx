@@ -22,7 +22,6 @@ function App() {
 						<Route path="/" element={<HomePage/>}/>
 						<Route path="/skill-analyze" element={<SkillAnalyzerPage/>}/>
 						<Route path="/skill-test" element={<CodingTestPage/>}/>
-						<Route path="/time-line" element={<TimeLine/>}/>
 					</Routes>
 			</Router>
 		</UserContext.Provider>
