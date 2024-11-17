@@ -21,6 +21,7 @@ function App() {
 						<Route path="/" element={<HomePage/>}/>
 						<Route path="/skill-analyze" element={<SkillAnalyzerPage/>}/>
 						<Route path="/skill-test" element={<CodingTestPage/>}/>
+						<Route path="/coding-test" element={<CodingTestPage/>}/>
 					</Routes>
 			</Router>
 		</UserContext.Provider>

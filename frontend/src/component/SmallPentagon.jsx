@@ -9,30 +9,11 @@ const data = [
     { subject: 'Code Quality&Best Practices', A: 99, fullMark: 150 },
 ];
 
-// Custom Tick Component
-const CustomTick = (props) => {
-  const { payload, x, y, textAnchor } = props;
-
-  // Split the text into multiple lines
-  const lines = payload.value.split(" ");
-
-  return (
-    <text x={x} y={y} textAnchor={textAnchor} fill="#666">
-      {lines.map((line, index) => (
-        <tspan x={x} dy={index === 0 ? 0 : 14} key={index}>
-          {line}
-        </tspan>
-      ))}
-    </text>
-  );
-};
-
-const Pentagon = ({ cx, cy, outerRadius, width, height }) => {
+const SmallPentagon = ({ cx, cy, outerRadius, width, height }) => {
     return (
         <RadarChart cx={cx ?? 150} cy={cy ?? 150} outerRadius={outerRadius} width={width} height={height} data={data}>
             <PolarGrid />
-            <PolarAngleAxis dataKey="subject" tick={<CustomTick />} />
-            <PolarRadiusAxis />
+            <PolarAngleAxis dataKey="subject" tick={false}/>
             <Radar name="Skill Graph" dataKey="A" stroke='#000' fill='#9BD8BB' fillOpacity={0.6} />
 
             <Tooltip
@@ -45,4 +26,4 @@ const Pentagon = ({ cx, cy, outerRadius, width, height }) => {
     );
 };
 
-export default Pentagon;
+export default SmallPentagon;

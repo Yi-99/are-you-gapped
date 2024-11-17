@@ -1,8 +1,8 @@
 import { useState } from "react"
 
 const CareerProgress = () => {
-    const [mileStones,setMileStones] = useState([])
-    const [progress, setProgress] = useState(0);
+	const [mileStones,setMileStones] = useState([])
+	const [progress, setProgress] = useState(0);
   const [milestoneIndex, setMilestoneIndex] = useState(0);
   // const milestones = [
   //   { id: 1, label: "Junior in College" },
@@ -63,24 +63,32 @@ const CareerProgress = () => {
   
         {/* Buttons */}
         <div className="flex gap-4 mt-6">
-          <button
-            onClick={handlePrevious}
-            className={`px-4 py-2 bg-gray-200 rounded ${
-              currentStep === 1 ? "cursor-not-allowed opacity-50" : "hover:bg-gray-300"
-            }`}
-            disabled={currentStep === 1}
-          >
-            Previous
-          </button>
-          <button
-            onClick={handleNext}
-            className={`px-4 py-2 bg-blue-500 text-white rounded ${
-              currentStep === milestones.length ? "cursor-not-allowed opacity-50" : "hover:bg-blue-600"
-            }`}
-            disabled={currentStep === milestones.length}
-          >
-            Next
-          </button>
+					{
+						currentStep !== 1 ? (
+							<button
+								onClick={handlePrevious}
+								className={`px-4 py-2 bg-gray-200 rounded ${
+									currentStep === 1 ? "cursor-not-allowed opacity-50" : "hover:bg-gray-300"
+								}`}
+							>
+								Previous
+							</button>
+						) : (<></>)
+					}
+					{
+						currentStep < milestones.length ? (
+							<button
+								onClick={handleNext}
+								className={`px-4 py-2 bg-blue-500 text-white rounded ${
+									currentStep === milestones.length ? "cursor-not-allowed opacity-50" : "hover:bg-blue-600"
+								}`}
+								disabled={currentStep === milestones.length}
+							>
+								Next
+							</button>
+						) : (<></>)
+					}
+
         </div>
       </div>
     );
