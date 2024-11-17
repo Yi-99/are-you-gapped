@@ -19,15 +19,16 @@ export const SkillGapAnalyzerModal = ({ showModal, setShowModal }) => {
 	}
 
 	return (
-		<div className='skill-gap-container p-4 m-4 rounded-lg shadow-2xl flex flex-col bg-white'>
+		<div className='skill-gap-container py-2 px-4 m-4 rounded-lg shadow-2xl flex flex-col bg-white'>
 			<div className='header flex flex-row justify-between items-center'>
-				<span>Skill Gap Analyzer</span>
+				<span className='text-lg font-semibold'>Skill Gap Analyzer</span>
 				<button
-					className='close-button bg-transparent text-end items-center cursor-pointer text-sm'
-					onClick={handleCloseButton}
-				>
-					<CloseIcon className="text-[#185440]" fontSize="inherit"/>
-				</button>
+				className='close-button bg-transparent text-end items-center cursor-pointer text-base p-2 pr-4'
+				onClick={handleCloseButton}
+			>
+				<CloseIcon className="text-[#185440]" fontSize="medium"/>
+			</button>
+
 			</div>
 			<div className='body flex flex-col justify-start items-center h-full'>
 				{
@@ -54,7 +55,7 @@ export const SkillGapAnalyzerModal = ({ showModal, setShowModal }) => {
 									<OverallScore />
 								</div>
 								<div className='p-4'>
-									<Link to="/skill-analyze" className="link text-white bg-[#185440] p-1 rounded-md shadow-md">
+									<Link to="/skill-analyze" className="link text-white text-lg bg-[#185440] p-2 rounded-md shadow-md">
 										View Detail
 									</Link>
 								</div>
