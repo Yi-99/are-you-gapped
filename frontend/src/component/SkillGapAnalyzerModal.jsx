@@ -4,7 +4,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import profileImage from '../assets/profile.png';
 import './SkillGapAnalyzerModal.css';
 import { Link } from 'react-router-dom';
-import Pentagon from './Pentagon';
+import SmallPentagon from './SmallPentagon';
 import OverallScore from './OverallScore';
 
 export const SkillGapAnalyzerModal = ({ showModal, setShowModal }) => {
@@ -41,7 +41,7 @@ export const SkillGapAnalyzerModal = ({ showModal, setShowModal }) => {
 								<span>John Doe</span>
 							</div>
 							<div className="info-container w-max h-fit m-4 p-4 flex flex-col justify-center items-center">
-								<Link to="/skill-analyze" className="link text-white bg-[#185440] p-2 rounded-md shadow-md">
+								<Link to="/coding-test" className="link text-white bg-[#185440] p-2 rounded-md shadow-md">
 									ARE YOU GAPPED? Start Skill Analysis
 								</Link>
 							</div> 
@@ -49,7 +49,7 @@ export const SkillGapAnalyzerModal = ({ showModal, setShowModal }) => {
 						) : (
 							<>
 								<div className=''>
-									<Pentagon outerRadius={110} width={300} height={300} />
+									<SmallPentagon outerRadius={110} width={300} height={300} />
 								</div>
 								<div className='rounded-full py-2 px-4 border-2 border-green-600'>
 									<OverallScore />

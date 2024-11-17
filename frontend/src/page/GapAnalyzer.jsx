@@ -1,4 +1,5 @@
 import CareerProgress from "../component/careerProgress"
+import Timeline from "../component/TimeLine";
 
 
 const GapAnalyzer = () => {
@@ -46,7 +47,9 @@ const GapAnalyzer = () => {
       ];
     return (
         <>
-        <CareerProgress/>
+				<div className="px-32 mx-32">
+        	<Timeline/>
+				</div>
         <div className='py-10'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='text-center mt-20'>

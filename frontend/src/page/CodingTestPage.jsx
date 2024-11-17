@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Header from "../component/Header";
 import QuestionPanel from "../component/QuestionPanel";
 import DescriptionPanel from "../component/DescriptionPanel";
 import QueryPanel from "../component/QueryPanel";
 import questions from "../data/questions.json"; // Import the JSON file
+import { UserContext } from '../UserContext';
+import { Route, useNavigate } from "react-router-dom";
 
 const CodingTestPage = () => {
   const questionsArray = Object.values(questions.questions); // Convert the "questions" object into an array
@@ -12,6 +14,7 @@ const CodingTestPage = () => {
   const [error, setError] = useState(""); // Error message state
   const totalQuestions = questionsArray.length;
   const currentQuestion = questionsArray[currentIndex]; // Get the current question based on the index
+	const { user, setUser } = useContext(UserContext);
 
   // Validate user input and set error message dynamically
   const handleQuerySubmit = () => {
@@ -21,6 +24,11 @@ const CodingTestPage = () => {
       setError(`error: use of undeclared identifier '${queryInput}' 1 error generated.`)
     }
   };
+	
+	const handleFinish = () => {
+		setUser({...user, isSkillsAnalyzed: true});
+		useNavigate('/');
+	}
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -99,7 +107,7 @@ const CodingTestPage = () => {
         </div>
       )}
       <button
-        onClick={handleQuerySubmit}
+        onClick={handleFinish}
         className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
       >
         Finish
