@@ -11,7 +11,7 @@ import CodingTestPage from './page/CodingTestPage'
 function App() {
 	const [user, setUser] = useState({
 		user_id: uuidv4(),
-		isSkillsAnalyzed: false,
+		isSkillsAnalyzed: true,
 	});
 
   return (

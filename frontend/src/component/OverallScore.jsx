@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const skills = [
     { name: 'React', score: 80 },
@@ -12,17 +13,10 @@ const averageScore = (skills.reduce((sum, skill) => sum + skill.score, 0) / skil
 
 const OverallScore = () => {
     return(
-        <div className = "italic">
-            <h2 className="text-5xl">Overall Score</h2>
-            <div className="text-5xl">{averageScore}</div>
-            <div className="text-2xl ">
-                {skills.map((skill, index) => (
-                    <div key={index}>
-                        <span>{skill.name}: </span>
-                        <span>{skill.score} </span>
-                    </div>
-                ))}
-            </div>
+        <div className= " italic flex flex-col items-center justify-center">
+            {/* Title */}
+            <h2 className="text-3xl mb-4">Overall Score : {averageScore}</h2>
+            
         </div>
     );
 }
