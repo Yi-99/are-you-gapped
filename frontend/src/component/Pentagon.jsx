@@ -11,10 +11,10 @@ const data = [
 
 const Pentagon = ({ cx, cy, outerRadius, width, height }) => {
     return (
-        <RadarChart cx={cx ?? 50} cy={cy ?? 50} outerRadius={outerRadius} width={width} height={height} data={data}>
+        <RadarChart cx={cx ?? 150} cy={cy ?? 150} outerRadius={outerRadius} width={width} height={height} data={data}>
             <PolarGrid />
-            <PolarAngleAxis dataKey="subject" />
-            <PolarRadiusAxis />
+            <PolarAngleAxis dataKey="subject" tick={false} />
+            
             <Radar name="Skill Graph" dataKey="A" stroke='#000' fill='#9BD8BB' fillOpacity={0.6} />
 
             <Tooltip

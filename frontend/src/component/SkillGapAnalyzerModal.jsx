@@ -5,6 +5,7 @@ import profileImage from '../assets/profile.png';
 import './SkillGapAnalyzerModal.css';
 import { Link } from 'react-router-dom';
 import Pentagon from './Pentagon';
+import OverallScore from './OverallScore';
 
 export const SkillGapAnalyzerModal = ({ showModal, setShowModal }) => {
 	// TODO: Need to add a state that tells if the user has already answered the skill analysis questions.
@@ -18,7 +19,7 @@ export const SkillGapAnalyzerModal = ({ showModal, setShowModal }) => {
 	}
 
 	return (
-		<div className='skill-gap-container p-4 m-4 rounded-lg bg-white shadow-2xl flex flex-col'>
+		<div className='skill-gap-container p-4 m-4 rounded-lg shadow-2xl flex flex-col bg-white'>
 			<div className='header flex flex-row justify-between items-center'>
 				<span>Skill Gap Analyzer</span>
 				<button
@@ -45,7 +46,21 @@ export const SkillGapAnalyzerModal = ({ showModal, setShowModal }) => {
 							</div> 
 						</>
 						) : (
-							<Pentagon className='justify-center' outerRadius={50} width={300} height={300}/>
+							<>
+								<div className=''>
+									<Pentagon outerRadius={110} width={300} height={300} />
+								</div>
+								<div className='rounded-full py-2 px-4 border-2 border-green-600'>
+									<OverallScore />
+								</div>
+								<div className='p-4'>
+									<Link to="/skill-analyze" className="link text-white bg-[#185440] p-1 rounded-md shadow-md">
+										View Detail
+									</Link>
+								</div>
+								
+								
+							</>
 						)
 				}
 				
