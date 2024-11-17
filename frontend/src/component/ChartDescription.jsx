@@ -29,7 +29,7 @@ export const ChartDescription = () => {
     const [activeTab, setActiveTab] = useState(0);
 
     return (
-        <div className="max-w-lg min-w-min ml-auto m-4 p-4 bg-gray shadow-md rounded-lg">
+        <div className="w-3/4 ml-auto m-4 p-4 bg-gray shadow-md rounded-lg">
             {/* Tabs */}
             <div className="flex border-b border-gray-300 mb-4 gap-8 w-100 overflow-auto">
                 {skills.map((skill, index) => (
@@ -47,7 +47,7 @@ export const ChartDescription = () => {
             </div>
 
             {/* Tab Content */}
-            <div className="p-4">
+            <div className="p-2">
                 <h3 className="text-xl font-semibold text-[#006366]">{skills[activeTab].subject}</h3>
                 <p className="mt-2 text-gray-700">{skills[activeTab].description}</p>
             </div>

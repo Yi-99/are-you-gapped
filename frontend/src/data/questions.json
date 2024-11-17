@@ -1,0 +1,109 @@
+{
+  "questions": {
+    "question1": {
+      "question": "Which of the following is a common design pattern for separating concerns in software architecture?",
+      "options": ["Singleton", "Observer", "Factory", "MVC", "Adapter"],
+      "answer": "MVC",
+      "relavent skill": "",
+      "type": "multiple-choice"
+    },
+    "question2": {
+      "question": "Which design pattern is used to create a single instance of a class?",
+      "options": ["Factory", "Singleton", "Observer", "Decorator", "Strategy"],
+      "answer": "Singleton",
+      "type": "multiple-choice"
+    },
+    "question3": {
+      "question": "Which is a principle of SOLID design?",
+      "options": [
+        "Single Responsibility",
+        "Multiple Inheritance",
+        "Loose Coupling",
+        "High Cohesion",
+        "None of the above"
+      ],
+      "answer": "Single Responsibility",
+      "type": "multiple-choice"
+    },
+    "question4": {
+      "question": "Which JavaScript feature allows you to define anonymous functions?",
+      "options": [
+        "Classes",
+        "Arrow functions",
+        "Promises",
+        "Modules",
+        "Generators"
+      ],
+      "answer": "Arrow functions",
+      "relavent skill": "",
+      "type": "multiple-choice"
+    },
+    "question5": {
+      "question": "Which of the following is an example of a NoSQL database?",
+      "options": ["MySQL", "PostgreSQL", "MongoDB", "SQLite", "Oracle"],
+      "answer": "MongoDB",
+      "relavent skill": "",
+      "type": "multiple-choice"
+    },
+    "question6": {
+      "question": "In object-oriented design, what principle encourages reducing interdependence between modules?",
+      "options": [
+        "Polymorphism",
+        "Encapsulation",
+        "Abstraction",
+        "Separation of concerns",
+        "Inheritance"
+      ],
+      "answer": "Separation of concerns",
+      "relavent skill": "",
+      "type": "multiple-choice"
+    },
+    "question7": {
+      "question": "Which of the following Git commands is used to create a new branch?",
+      "options": [
+        "git commit",
+        "git push",
+        "git branch",
+        "git clone",
+        "git pull"
+      ],
+      "answer": "git branch",
+      "relavent skill": "",
+      "type": "multiple-choice"
+    },
+    "question8": {
+      "question": "Which leadership style is most effective for mentoring software engineers?",
+      "answer": "open-ended",
+      "relavent skill": "Leadership and Mentoring",
+      "type": "short-essay"
+    },
+    "question9": {
+      "question": "What is the most important characteristic of a principal software engineer?",
+      "answer": "open-ended",
+      "relavent skill": "Leadership and Mentoring",
+      "type": "short-essay"
+    },
+    "question10": {
+      "question": "Reverse the Order of Words in a String",
+      "description": "Given an input string s, reverse the order of the words. A word is defined as a sequence of non-space characters. The words in s will be separated by at least one space.\n\nReturn a string of the words in reverse order, joined by a single space. Note that the returned string should not have leading or trailing spaces, and multiple spaces between words should be reduced to a single space.",
+      "type": "coding",
+      "example1": {
+        "input": "hello there how are you",
+        "output": "you are how there hello"
+      },
+      "example2": {
+        "input": "  good morning  world  ",
+        "output": "world morning good"
+      },
+      "example3": {
+        "input": "   I am learning   code  ",
+        "output": "code learning am I"
+      },
+      "constraints": {
+        "minLength": 1,
+        "maxLength": 104,
+        "characters": "s contains English letters (upper-case and lower-case), digits, and spaces ' '. There is at least one word in s."
+      }
+    }
+  }
+}

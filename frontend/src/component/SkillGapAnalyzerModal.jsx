@@ -4,7 +4,8 @@ import CloseIcon from '@mui/icons-material/Close';
 import profileImage from '../assets/profile.png';
 import './SkillGapAnalyzerModal.css';
 import { Link } from 'react-router-dom';
-import Pentagon from './Pentagon';
+import SmallPentagon from './SmallPentagon';
+import OverallScore from './OverallScore';
 
 export const SkillGapAnalyzerModal = ({ showModal, setShowModal }) => {
 	// TODO: Need to add a state that tells if the user has already answered the skill analysis questions.
@@ -18,15 +19,16 @@ export const SkillGapAnalyzerModal = ({ showModal, setShowModal }) => {
 	}
 
 	return (
-		<div className='skill-gap-container p-4 m-4 rounded-lg bg-white shadow-2xl flex flex-col'>
+		<div className='skill-gap-container py-2 px-4 m-4 rounded-lg shadow-2xl flex flex-col bg-white'>
 			<div className='header flex flex-row justify-between items-center'>
-				<span>Skill Gap Analyzer</span>
+				<span className='text-lg font-semibold'>Skill Gap Analyzer</span>
 				<button
-					className='close-button bg-transparent text-end items-center cursor-pointer text-sm'
-					onClick={handleCloseButton}
-				>
-					<CloseIcon className="text-[#185440]" fontSize="inherit"/>
-				</button>
+				className='close-button bg-transparent text-end items-center cursor-pointer text-base p-2 pr-4'
+				onClick={handleCloseButton}
+			>
+				<CloseIcon className="text-[#185440]" fontSize="medium"/>
+			</button>
+
 			</div>
 			<div className='body flex flex-col justify-start items-center h-full'>
 				{
@@ -39,13 +41,27 @@ export const SkillGapAnalyzerModal = ({ showModal, setShowModal }) => {
 								<span>John Doe</span>
 							</div>
 							<div className="info-container w-max h-fit m-4 p-4 flex flex-col justify-center items-center">
-								<Link to="/skill-analyze" className="link text-white bg-[#185440] p-2 rounded-md shadow-md">
+								<Link to="/coding-test" className="link text-white bg-[#185440] p-2 rounded-md shadow-md">
 									ARE YOU GAPPED? Start Skill Analysis
 								</Link>
 							</div> 
 						</>
 						) : (
-							<Pentagon className='justify-center' outerRadius={50} width={300} height={300}/>
+							<>
+								<div className=''>
+									<SmallPentagon outerRadius={110} width={300} height={300} />
+								</div>
+								<div className='rounded-full py-2 px-4 border-2 border-green-600'>
+									<OverallScore />
+								</div>
+								<div className='p-4'>
+									<Link to="/skill-analyze" className="link text-white text-lg bg-[#185440] p-2 rounded-md shadow-md">
+										View Detail
+									</Link>
+								</div>
+								
+								
+							</>
 						)
 				}
 				

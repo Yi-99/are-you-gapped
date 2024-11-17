@@ -23,7 +23,7 @@ const SkillAnalyzePage = () => {
 					<p className="text-[#185440] text-start flex-wrap">This radar chart evaluates your skill and guides you through your career journey.</p>
 					<div className="green-br"></div>
 				</div>
-				<div className='body min-w-500px flex mt-16 flex-row justify-between mb-16 gap-x-24'>
+				<div className='body min-w-500px flex mt-4 flex-row justify-between mb-4 px-64 ap-x-24'>
 					<ChartDescription />
 					<div className="radar-chart-container mr-auto shadow-lg p-4 m-4 flex flex-row justify-center items-center w-fit">
 						<Pentagon cx={250} cy={250} outerRadius={125} width={500} height={500}/>
