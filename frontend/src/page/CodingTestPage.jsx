@@ -16,6 +16,8 @@ const CodingTestPage = () => {
   const currentQuestion = questionsArray[currentIndex]; // Get the current question based on the index
 	const { user, setUser } = useContext(UserContext);
 
+  const navigate = useNavigate();
+  
   // Validate user input and set error message dynamically
   const handleQuerySubmit = () => {
     if (!queryInput.trim()) {
@@ -27,7 +29,7 @@ const CodingTestPage = () => {
 	
 	const handleFinish = () => {
 		setUser({...user, isSkillsAnalyzed: true});
-		useNavigate('/');
+    navigate('/');
 	}
 
   return (
@@ -43,10 +45,11 @@ const CodingTestPage = () => {
           &lt; Back
         </button>
         <button
-          className="bg-[#9BD8BB] text-white px-4 py-2 rounded hover:bg-[#185440]"
+          className="bg-[#185440] text-white px-4 py-2 rounded hover:bg-[#9BD8BB]"
           onClick={() =>
             setCurrentIndex((prev) => Math.min(prev + 1, totalQuestions - 1))
           }
+          
           disabled={currentIndex === totalQuestions - 1}
         >
           Next &gt;
