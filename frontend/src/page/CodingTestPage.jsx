@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Header from "../component/Header";
 import QuestionPanel from "../component/QuestionPanel";
 import DescriptionPanel from "../component/DescriptionPanel";
 import QueryPanel from "../component/QueryPanel";
 import questions from "../data/questions.json"; // Import JSON data
+import { UserContext } from '../UserContext';
+import { Route, useNavigate } from "react-router-dom";
 
 const CodingTestPage = () => {
   const questionsArray = Object.values(questions.questions); // Convert questions object to an array
@@ -13,22 +15,24 @@ const CodingTestPage = () => {
   const [selectedOption, setSelectedOption] = useState(null); // Tracks selected option for multiple-choice questions
 
   const totalQuestions = questionsArray.length;
-  const currentQuestion = questionsArray[currentIndex];
+  const currentQuestion = questionsArray[currentIndex]; // Get the current question based on the index
+	const { user, setUser } = useContext(UserContext);
 
-  const handleNext = () => {
-    // Reset states on next button click
-    setSelectedOption(null); // Clear selected option
-    setQueryInput(""); // Clear query input (if needed for coding questions)
-    setError(""); // Clear error message
-    setCurrentIndex((prev) => Math.min(prev + 1, totalQuestions - 1));
+  const navigate = useNavigate();
+  
+  // Validate user input and set error message dynamically
+  const handleQuerySubmit = () => {
+    if (!queryInput.trim()) {
+      setError("Error: code cannot be empty.");
+    } else {
+      setError(`error: use of undeclared identifier '${queryInput}' 1 error generated.`)
+    }
   };
-
-  const handleBack = () => {
-    setSelectedOption(null); // Clear selected option
-    setQueryInput(""); // Clear query input (if needed)
-    setError(""); // Clear error message
-    setCurrentIndex((prev) => Math.max(prev - 1, 0));
-  };
+	
+	const handleFinish = () => {
+		setUser({...user, isSkillsAnalyzed: true});
+    navigate('/');
+	}
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -43,8 +47,9 @@ const CodingTestPage = () => {
           &lt; Back
         </button>
         <button
-          className="bg-[#9BD8BB] text-white px-4 py-2 rounded hover:bg-[#185440]"
+          className="bg-[#185440] text-white px-4 py-2 rounded hover:bg-[#9BD8BB]"
           onClick={handleNext}
+          
           disabled={currentIndex === totalQuestions - 1}
         >
           Next &gt;
@@ -71,34 +76,49 @@ const CodingTestPage = () => {
           </div>
         )}
         {currentQuestion.type === "coding" && (
-          <div className="flex flex-col gap-4">
-            <DescriptionPanel currentQuestion={currentQuestion} />
-            <QueryPanel
-              currentQuestion={currentQuestion}
-              queryInput={queryInput}
-              setQueryInput={setQueryInput}
-            />
-            {error && (
-              <div className="bg-red-100 text-red-700 p-4 rounded shadow">
-                {error}
-              </div>
-            )}
-            <div className="flex justify-center items-center">
-  <button
-    onClick={() => {
-      if (!queryInput.trim()) {
-        setError("Error: Query cannot be empty.");
-      } else {
-        setError(""); // Clear error if valid
-      }
-    }}
-    className="bg-[#185440] text-white px-4 py-2 rounded-md w-[96px] text-center"
-  >
-    Finish
-  </button>
-</div>
-          </div>
-        )}
+  <div className="flex flex-col gap-4">
+    {/* Top Section: Description and QueryPanel Side by Side */}
+    <div className="flex flex-col lg:flex-row gap-4">
+      {/* Description Section */}
+      <div className="bg-white rounded shadow-md flex-1">
+        <div className="flex items-center bg-gray-200 rounded-t px-4">
+          <h2 className="text-lg font-semibold my-4">Description</h2>
+        </div>
+        <div className="p-4">
+          <p className="text-base text-gray-700 mb-4">{currentQuestion.question}</p>
+          {currentQuestion.options && (
+            <ul className="list-disc pl-6 text-base text-gray-700">
+              {currentQuestion.options.map((option, index) => (
+                <li key={index}>{option}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </div>
+      {/* Query Panel */}
+      <QueryPanel
+        currentQuestion={currentQuestion}
+        queryInput={queryInput}
+        setQueryInput={setQueryInput}
+      />
+    </div>
+
+    {/* Bottom Section: Error Message and Submit Button */}
+    <div className="flex flex-col gap-2">
+      {error && (
+        <div className="bg-red-100 text-red-700 p-4 rounded shadow">
+          {error}
+        </div>
+      )}
+      <button
+        onClick={handleFinish}
+        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+      >
+        Finish
+      </button>
+    </div>
+  </div>
+)}
       </div>
     </div>
   );
