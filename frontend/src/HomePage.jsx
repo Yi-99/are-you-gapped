@@ -28,7 +28,6 @@ const HomePage = () => {
 
 	return (
 		<div style={backgroundStyle}>
-			<p>HomePage</p>
 			{ showModal ? (
 				<div className="modal-container bottom-4 right-4 absolute">
 						<SkillGapAnalyzerModal showModal={showModal} setShowModal={setShowModal}/>
